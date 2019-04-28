@@ -21,5 +21,15 @@ namespace CSharpNodeServices.Controllers
             var result = await NodeServices.InvokeAsync<int>("./Scripts/add", 1, 2);
             return Content("1 + 2 = " + result);
         }
+
+        [HttpGet("screenshot")]
+        public async Task<IActionResult> Screenshot()
+        {
+            var url = "https://www.bcjobs.ca/";
+            var fileName = System.IO.Path.ChangeExtension(DateTime.UtcNow.Ticks.ToString(), "png");
+            var file = await NodeServices.InvokeAsync<string>("Scripts/screenshot", url, System.IO.Path.Combine("wwwroot/images", fileName));
+
+            return Content($"<img src=\"/images/{fileName}\" />", "text/html");
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace CSharpNodeServices
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }
