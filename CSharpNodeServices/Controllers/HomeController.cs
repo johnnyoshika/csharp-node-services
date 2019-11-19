@@ -22,6 +22,19 @@ namespace CSharpNodeServices.Controllers
             return Content("1 + 2 = " + result);
         }
 
+        [HttpGet("memory")]
+        public async Task<IActionResult> Memory()
+        {
+            string javascriptModule = @"
+                module.exports = function (callback, a, b) {
+                    let result = a + b;
+                    callback(/* error */ null, result);
+                };
+            ";
+            var result = await NodeService.InvokeFromStringAsync<int>(javascriptModule, args: new object[] { 1, 2 });
+            return Content("1 + 2 = " + result);
+        }
+
         [HttpGet("screenshot")]
         public async Task<IActionResult> Screenshot()
         {
