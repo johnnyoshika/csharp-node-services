@@ -1,5 +1,5 @@
 # CSharp NodeServices
-Test NodeServices to run JavaScript and NPM Packages within C#
+Test Jering.Javascript.NodeJS to run JavaScript and NPM Packages within C#
 
 # Setup
 * `npm install` to install `url-to-image` NPM Package
