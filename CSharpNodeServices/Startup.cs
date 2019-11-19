@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Jering.Javascript.NodeJS;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +18,7 @@ namespace CSharpNodeServices
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddNodeServices();
+            services.AddNodeJS();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
