@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="3.0.0" />
+    <PackageReference Include="Jering.Javascript.NodeJS" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
